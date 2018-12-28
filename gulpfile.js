@@ -11,7 +11,7 @@ const imagemin = require('gulp-imagemin');
 gulp.task('sass',()=>{
 	gulp.src('./src/sass/*.scss')
 	.pipe(sass())
-	.pipe(cssnano())
+	//.pipe(cssnano())
 	.pipe(rename({"suffix" : ".min"}))
 	.pipe(gulp.dest('./dist/css'));
 })
@@ -34,6 +34,6 @@ gulp.task('image',function(){
 gulp.task('default',()=>{
 	gulp.watch('./src/sass/*.scss',['sass']);
 	gulp.watch('./src/js/*.js',['js']);
-	gulp.watch('./src/image/*',['img'])
+	gulp.watch('./src/image/*',['image'])
 	
 })
